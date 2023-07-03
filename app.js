@@ -30,8 +30,14 @@ app.use("/", indexRoutes);
 const authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);
 
-const productsRoutes = require("./routes/products.routes");
-app.use("/products", productsRoutes);
+const favoritesRoutes = require('./routes/favorites.routes');
+app.use('/', favoritesRoutes);
+
+const productsRoutes = require('./routes/products.routes');
+app.use('/', productsRoutes);
+
+const purchasesRoutes = require('./routes/purchases.routes');
+app.use('/', purchasesRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);
