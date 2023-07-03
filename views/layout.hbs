@@ -10,59 +10,107 @@
   </head>
 
   <body>
-
-    <nav class="navbar navbar-expand-lg bg-light fixed-top">
-      <a class="navbar-brand" href="/">Jcommerce</a>
-      <button
-        class="navbar-toggler"
-        type="button"
-        data-toggle="collapse"
-        data-target="#navbarNavAltMarkup"
-        aria-controls="navbarNavAltMarkup"
-        aria-expanded="false"
-        aria-label="Toggle navigation"
-      >
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-      <div class="nav-container ml-auto">
-        <a href="/auth/signup" class="nav-btn">signup</a>
-        <a href="/auth/login" class="nav-btn">login</a>
-      </div>
-      </div>
-    </nav>
-
-    {{{body}}}
-
-    <footer class="footer-background footer">
-      <section class="footer-container">
-        <h3 class="footer-logo">jcommerce</h3>
-        <address class="address">Storkower Straße 132,
-          <br />
-          10407 Berlin,
-          <br />
-          Germany
-          <br />
-          +49 30 12 34 56 78</address>
-        <div class="imprint-container">
-          <span class="imprint-span">Imprint</span><span
-            class="imprint-span"
-          >Contact Us</span>
+    <div class="wrapper">
+      <nav class="navbar navbar-expand-lg bg-light fixed-top">
+        <a class="navbar-brand" href="/">jcommerce</a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarNavAltMarkup"
+          aria-controls="navbarNavAltMarkup"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="nav-container ml-auto">
+          <a href="/auth/signup" class="nav-btn">signup</a>
+          <a href="/auth/login" class="nav-btn">login</a>
         </div>
-        <div class="imprint-copyright">
-          <span>© 2023 jcommerce</span>
         </div>
-      </section>
-      <iframe
-        src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q=Storkower%20Stra%C3%9Fe%20132%20Berlin+(Project%20Watch)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
-        class="map-frame"
-        frameborder="0"
-        style="border:0"
-        allowfullscreen=""
-      ></iframe>
+      </nav>
 
+      <div class="content">
+        <div class="container">
+          {{{body}}}
+        </div>
+      </div>
+
+      <footer class="text-white text-center text-lg-start footer" style="background-color: #c4c4c6;">
+        <!-- Grid container -->
+        <div class="container p-4">
+        <!--Grid row-->
+        <div class="row mt-4">
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-12 mb-4 mb-md-0">
+            <h5 class="text-uppercase mb-4">jcommerce</h5>
+
+            <p>
+              At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium
+              voluptatum deleniti atque corrupti.
+            </p>
+
+            
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+
+
+            <div class="form-outline form-white mb-4">
+
+            <div class="form-notch"><div class="form-notch-leading" style="width: 9px;"></div><div class="form-notch-middle" style="width: 48.8px;"></div><div class="form-notch-trailing"></div></div></div>
+
+            <div class="fa-ul" style="margin-left: 1.65em;">
+              <div class="mb-3">
+                <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">Storkower Straße 132<br />
+            10407 Berlin
+            <br />
+            Germany
+            <br /></span>
+              </div>
+              <div class="mb-3">
+                <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">info@jcommerce.com</span>
+              </div>
+              <div class="mb-3">
+                <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+49 30 12 34 56 78</span>
+              </div>
+            </div>
+          </div>
+          <!--Grid column-->
+
+          <!--Grid column-->
+          <div class="col-lg-4 col-md-6 mb-4 mb-md-0">
+            <iframe
+              src="https://maps.google.com/maps?width=100%25&amp;height=200&amp;hl=en&amp;q=Storkower%20Stra%C3%9Fe%20132%20Berlin+(Project%20Watch)&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed"
+              class="map-frame"
+              frameborder="0"
+              style="border:0"
+              allowfullscreen=""
+            ></iframe>
+          </div>
+          <!--Grid column-->
+          </div>
+          <!--Grid row-->
+          </div>
+        <!-- Grid container -->
+
+        <!-- Copyright -->
+        <div class="text-center p-3" style="background-color: rgb(155, 155, 155);">
+        © 2023 jcommerce
+      </div>
+      <!-- Copyright -->
     </footer>
 
+
+
+
+
+
+    </div>
     <script src="/js/script.js"></script>
   </body>
 
