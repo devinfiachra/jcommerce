@@ -4,7 +4,6 @@ const app = require("./app");
 // ℹ️ Sets the PORT for our app to have access to it. If no env has been set, we hard code it to 3000
 const PORT = process.env.PORT || 3000;
 
-// GETTING ERROR ABOUT ONLINE DATA BASE (SHOULD FIXED)
 const connectDB = async () => {
   try {
     const conn = await mongoose.connect(process.env.MONGO_URI);
@@ -21,5 +20,3 @@ connectDB().then(() => {
     console.log("listening for requests");
   });
 });
-
-// app.listen(3000, console.log("App is listening on port 3000"));
