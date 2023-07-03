@@ -1,6 +1,14 @@
 const Favorite = require('../models/Favorite.model.js');
 
 
+const postNewFavorite = (req, res, next) => {
+  const { product, user } = req.body;
+
+  Favorite.create({ product, user })
+    .then(() => res.redirect('/favorites'))
+    .catch(error => next(error));
+};
+
 const getFavorites = (req, res, next) => {
   Favorite.find()
     .then(allTheFavoritesFromDB => {
@@ -24,4 +32,4 @@ const postDeleteFavorite = (req, res, next) => {
 };
 
 
-module.exports = {getFavorites, postDeleteFavorite};
+module.exports = {postNewFavorite, getFavorites, postDeleteFavorite};

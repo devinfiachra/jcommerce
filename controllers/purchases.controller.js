@@ -1,6 +1,14 @@
 const Purchase = require('../models/Purchase.model.js');
 
 
+const postNewPurchase = (req, res, next) => {
+  const { product, user, price, shippingAddress, date } = req.body;
+
+  Purchase.create({ product, user, price, shippingAddress, date })
+    .then(() => res.redirect('/purchases'))
+    .catch(error => next(error));
+};
+
 const getPurchases = (req, res, next) => {
   Purchase.find()
     .then(allThePurchasesFromDB => {
@@ -28,4 +36,4 @@ const getPurchaseId = (req, res, next) => {
 };
 
 
-module.exports = {getPurchases, getPurchaseId}
+module.exports = {postNewPurchase, getPurchases, getPurchaseId}

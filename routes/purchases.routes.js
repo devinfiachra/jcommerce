@@ -1,6 +1,8 @@
 const router = require('express').Router();
-const {getPurchases, getPurchaseId} = require("../controllers/purchases.controller.js");
+const {postNewPurchase, getPurchases, getPurchaseId} = require("../controllers/purchases.controller.js");
 
+
+router.post('/purchases/create', postNewPurchase);
 
 router.get('/purchases', getPurchases);
 

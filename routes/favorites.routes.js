@@ -1,6 +1,8 @@
 const router = require('express').Router();
-const {getFavorites, postDeleteFavorite} = require("../controllers/favorites.controller.js");
+const {postNewFavorite, getFavorites, postDeleteFavorite} = require("../controllers/favorites.controller.js");
 
+
+router.post('/favorites/create', postNewFavorite);
 
 router.get('/favorites', getFavorites);
 
