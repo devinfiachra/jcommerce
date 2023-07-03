@@ -4,35 +4,34 @@ const productSchema = new Schema(
   {
     title: {
       type: String,
-      required: true
+      required: true,
     },
     description: {
-      type: String
+      type: String,
     },
     price: {
       type: Number,
-      required: true
+      required: true,
     },
     category: {
-      type: String
+      type: String,
     },
     rating: {
-      type: Number
+      type: Number,
     },
     image: {
       type: String,
-      // default: add default image url here
+      default: "../public/images/no-product.png",
     },
     quantity: {
       type: Number,
       min: 0,
-      default: 1
-    }
+      default: 1,
+    },
   },
   {
-    timestamps: true
+    timestamps: true,
   }
 );
-
 
 module.exports = model("Product", productSchema);
