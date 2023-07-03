@@ -1,17 +1,5 @@
-<<<<<<< HEAD:views/products.hbs
 <h1 style="text-align: center;">Latest Products</h1>
 <hr />
-
-{{! <div class="p-btns">
-  <button>All</button>
-  <button>Men's Clothing</button>
-  <button>Women's Clothing</button>
-  <button>Jewelery</button>
-  <button>Electronic</button>
-</div> }}
-=======
-<h1>products list</h1>
->>>>>>> main:views/products/products-list.hbs
 
 <ul class="products">
   {{#each products}}
@@ -19,9 +7,12 @@
       <img src=" {{this.image}}" alt="" />
       <p>Category : {{this.category}}</p>
       <p>Price : ${{this.price}}</p>
-      <button>
+      {{!-- <button>
         <a href="/products/{{this.id}}">Buy Now</a>
-      </button>
+      </button> --}}
+      <form action="/products/{{this.id}}" method="GET">
+        <button type="submit">Buy Now</button>
+      </form>
     </li>
   {{/each}}
 </ul>

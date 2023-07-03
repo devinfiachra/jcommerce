@@ -1,5 +1,25 @@
 <h1>CART</h1>
 
 <section class="cart">
-  <div></div>
+  <div>
+    <h1 style="text-align: center;">Product Details</h1>
+    <hr />
+    <div class="product-details">
+      <div class="p-details">
+        <div class="image-container">
+          <img class="detail-img" src="{{product.image}}" alt="" />
+        </div>
+        <div class="content-container">
+          <p>Title: {{product.title}}</p>
+          <p>Price:</p>
+          <button>﹣</button>
+          <button>＋</button>
+
+          <div class="button-container">
+            <button><a href="/products">Back To Shopping</a></button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>

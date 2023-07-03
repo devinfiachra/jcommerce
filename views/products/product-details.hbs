@@ -1,1 +1,20 @@
-<h1>product details</h1>
+<h1 style="text-align: center;">Product Details</h1>
+<hr />
+<div class="product-details">
+  <div class="p-details">
+    <div class="image-container">
+      <img class="detail-img" src="{{product.image}}" alt="" />
+    </div>
+    <div class="content-container">
+      <p>Category: {{product.category}}</p>
+      <p>Title: {{product.title}}</p>
+      <p>Rating: {{product.rating.rate}}★</p>
+      <p>Price: ${{product.price}}</p>
+      <p>Description: {{product.description}}</p>
+      <div class="button-container">
+        <button>Add to Cart</button>
+        <button><a href="/carts">Go to Cart</a></button>
+      </div>
+    </div>
+  </div>
+</div>

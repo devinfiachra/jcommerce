@@ -33,10 +33,43 @@ li {
   margin: 5px;
 }
 
-/* .p-btns {
+.p-details {
   text-align: center;
 }
 
-.p-btns button {
-  background-color: white;
-} */
+.detail-img {
+  max-width: 200px;
+  float: left;
+  margin-right: 20px;
+}
+
+.detail-img {
+  max-width: 200px;
+}
+
+.p-details {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* .button-container button {
+  /* İstenilen stil düzenlemeleri */
+/* } */

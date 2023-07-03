@@ -30,14 +30,8 @@ app.use("/", indexRoutes);
 const authRoutes = require("./routes/auth.routes");
 app.use("/auth", authRoutes);
 
-const favoritesRoutes = require('./routes/favorites.routes');
-app.use('/', favoritesRoutes);
-
-const productsRoutes = require('./routes/products.routes');
-app.use('/', productsRoutes);
-
-const purchasesRoutes = require('./routes/purchases.routes');
-app.use('/', purchasesRoutes);
+const productsRoutes = require("./routes/products.routes");
+app.use("/products", productsRoutes);
 
 const cartRoutes = require("./routes/carts.routes");
 app.use("/carts", cartRoutes);
