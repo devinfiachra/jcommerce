@@ -10,3 +10,21 @@ a {
 h1 {
   color: 15px;
 }
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.products img {
+  max-width: 200px;
+  flex-grow: 1;
+  margin: 10px;
+}
+
+.products li {
+  flex: 1 0 200px;
+  border-style: solid;
+  border-color: #00b7ff;
+  margin: 5px;
+}
