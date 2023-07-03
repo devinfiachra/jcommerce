@@ -1,12 +1,15 @@
 <h1>products list</h1>
 
-<ul class="products">
-  {{#each products}}
-    <li style="list-style-type:none">
-      <p>Price : {{this.price}}</p>
-      <p>Description : {{this.description}}</p>
-      <p>Category : {{this.category}}</p>
-      <img src=" {{this.image}}" alt="" />
-    </li>
+<div class="container">
+  <div class="row">
+    {{#each products}}
+    <div class="col-3">
+      <img src="{{image_url}}" alt="{{title}}">
+      <div>
+        <h3>{{title}}</h3>
+        <p class="ml-auto">{{price}}</p>
+      </div>
+    </div>
   {{/each}}
-</ul>
+  </div>
+</div>
