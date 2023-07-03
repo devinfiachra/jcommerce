@@ -1,1 +1,19 @@
 <h1>product details</h1>
+
+
+<div class="container">
+  <div class="mx-auto">
+    <div class="row detail">
+      <div class="col-6 d-flex align-items-center">
+        <img src="{{ product.image }}" alt="{{ product.title }}"/>
+      </div>
+      <div class="text col-6 d-flex align-items-center">
+        <h5><b>{{product.title}}</b></h3>
+        <br>
+        <p>{{product.description}}</p>
+        <p><i>{{product.price}}</i></p>
+        <p>{{product.rating}}</p>
+      </div>
+    </div>
+  </div>
+</div>

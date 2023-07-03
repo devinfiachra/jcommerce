@@ -19,7 +19,9 @@ const getProductId = (req, res, next) => {
   const { productId } = req.params;
 
   Product.findById(productId)
-    .then(theProduct => res.render('products/product-details.hbs', { product: theProduct }))
+    .then((theProduct) => {
+      console.log(theProduct)
+      res.render('products/product-details.hbs', { product: theProduct })})
     .catch(error => {
       console.log('Error while retrieving product details: ', error);
 
