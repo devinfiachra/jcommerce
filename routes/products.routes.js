@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 const express = require("express");
 const router = express.Router();
 const apiUrl = "https://fakestoreapi.com/products";
@@ -25,6 +26,16 @@ router.get("/", (req, res, next) => {
       console.log(error);
     });
 });
+=======
+const router = require('express').Router();
+const {getProducts, getProductId} = require("../controllers/products.controller.js");
+
+
+router.get('/products', getProducts);
+
+router.get('/products/:productsId', getProductId);
+
+>>>>>>> main
 
 router.get("/products/:id", (req, res, next) => {
   const productId = req.params.id;
