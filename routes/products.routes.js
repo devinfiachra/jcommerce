@@ -3,7 +3,7 @@ const router = express.Router();
 
 const apiUrl = "https://fakestoreapi.com/products";
 
-/* GET home page */
+/* GET /products page */
 router.get("/", (req, res, next) => {
   // console.log olarak array object dokumentasyondan
   //   fetch(apiUrl)
