@@ -9,15 +9,7 @@
         <div class="col-md-8 detail-text">
             <h2 class="title">{{product.title}}</h2>
             <p class="price">${{product.price}}</p>
-            <div>
-                {{#times 5}}
-                    {{#ifCond @index '<' product.rating}}
-                        <i class="fas fa-star"></i> 
-                    {{else}}
-                        <i class="far fa-star"></i>
-                    {{/ifCond}}
-                {{/times}}
-            </div>
+
             <p class="description">{{product.description}}</p>
             <button class="btn btn-primary" id="add-to-cart">Add to Cart</button>
         </div>
