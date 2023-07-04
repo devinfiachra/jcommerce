@@ -42,8 +42,9 @@ app.use("/", purchasesRoutes);
 const adminRoutes = require("./routes/admin.routes");
 app.use("/", adminRoutes);
 
+// If you change this route from /carts to / it is not working !!!
 const cartRoutes = require("./routes/carts.routes");
-app.use("/", cartRoutes);
+app.use("/carts", cartRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

@@ -1,4 +1,4 @@
-<h1>CART</h1>
+{{!-- <h1>CART</h1>
 
 <section class="cart">
   <div>
@@ -11,7 +11,7 @@
         </div>
         <div class="content-container">
           <p>Title: {{product.title}}</p>
-          <p>Price:</p>
+          <p>Price: ${{product.price}}</p>
           <button>﹣</button>
           <button>＋</button>
 
@@ -20,6 +20,30 @@
           </div>
         </div>
       </div>
+    </div>
+  </div>
+</section> --}}
+
+<h1>CART</h1>
+
+<section class="cart">
+  <div>
+    <h1 style="text-align: center;">Product Details</h1>
+    <hr />
+    <div class="product-details">
+      {{#each cartItems}}
+        <div class="p-details">
+          <div class="image-container">
+            <img class="detail-img" src="{{this.image}}" alt="" />
+          </div>
+          <div class="content-container">
+            <p>Title: {{this.title}}</p>
+            <p>Price: ${{this.price}}</p>
+            <p class="quantity">Quantity: 0</p>
+            <!-- Diğer ürün bilgilerini buraya ekleyin -->
+          </div>
+        </div>
+      {{/each}}
     </div>
   </div>
 </section>
