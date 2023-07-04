@@ -33,3 +33,66 @@ a {
   border: 1px solid grey;
   border-radius: 5px;
 }
+
+li {
+  list-style: none;
+}
+
+.products {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.products img {
+  max-width: 200px;
+  flex-grow: 1;
+  margin: 10px;
+}
+
+.products li {
+  flex: 1 0 200px;
+  border-style: solid;
+  border-color: #00b7ff;
+  margin: 5px;
+}
+
+.p-details {
+  text-align: center;
+}
+
+.detail-img {
+  max-width: 200px;
+  float: left;
+  margin-right: 20px;
+}
+
+.detail-img {
+  max-width: 200px;
+}
+
+.p-details {
+  text-align: center;
+  display: flex;
+  justify-content: center;
+}
+
+.image-container {
+  display: flex;
+  justify-content: center;
+}
+
+.content-container {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+.button-container {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* .button-container button {
+  /* İstenilen stil düzenlemeleri */
+/* } */

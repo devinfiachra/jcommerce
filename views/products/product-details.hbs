@@ -9,11 +9,17 @@
       </div>
       <div class="text col-6 d-flex align-items-center">
         <h5><b>{{product.title}}</b></h3>
-        <br>
-        <p>{{product.description}}</p>
-        <p><i>{{product.price}}</i></p>
-        <p>{{product.rating}}</p>
+      <p>Category: {{product.category}}</p>
+      <p>Title: {{product.title}}</p>
+      <p>Rating: {{product.rating.rate}}★</p>
+      <p>Price: ${{product.price}}</p>
+      <p>Description: {{product.description}}</p>
+        <div class="button-container">
+          <button>Add to Cart</button>
+          <button><a href="/carts">Go to Cart</a></button>
+      </div>
       </div>
     </div>
   </div>
 </div>
+

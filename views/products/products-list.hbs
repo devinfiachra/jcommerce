@@ -1,17 +1,18 @@
-<h1>products list</h1>
+<h1 style="text-align: center;">Latest Products</h1>
+<hr />
 
-<div class="container">
-  <div class="row">
-    {{#each products}}
-    <div class="col-3">
-
-      <img src="{{image}}" alt="{{title}}" class="product-image">
-
-      <div>
-        <h3>{{title}}</h3>
-        <p class="ml-auto">{{price}}</p>
-      </div>
-    </div>
+<ul class="products">
+  {{#each products}}
+    <li style="list-style-type:none">
+      <img src=" {{this.image}}" alt="" />
+      <p>Category : {{this.category}}</p>
+      <p>Price : ${{this.price}}</p>
+      {{!-- <button>
+        <a href="/products/{{this.id}}">Buy Now</a>
+      </button> --}}
+      <form action="/products/{{this.id}}" method="GET">
+        <button type="submit">Buy Now</button>
+      </form>
+    </li>
   {{/each}}
-  </div>
-</div>
+</ul>
