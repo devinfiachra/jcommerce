@@ -23,6 +23,8 @@ const projectName = "jcommerce";
 
 app.locals.appTitle = `${(projectName)}`;
 
+
+
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
