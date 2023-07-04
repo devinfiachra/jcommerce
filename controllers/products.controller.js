@@ -7,13 +7,13 @@ const mongoURI = process.env.MONGO_URI;
 const axios = require("axios");
 
 // new version with axios
-//Böylece, getProducts fonksiyonu artık API'den veri alacak ve dönen veriyi konsolda gösterecektir. Daha sonra şablonla işlem yapmak için bu veriyi kullanabilirsiniz.
+
 const getProducts = (req, res, next) => {
   axios
     .get(apiUrl)
     .then((response) => {
       const productsFromAPI = response.data;
-      console.log("getproducts", productsFromAPI);
+      // console.log("getproducts", productsFromAPI);
       res.render("products/products-list.hbs", {
         products: productsFromAPI,
       });
@@ -38,7 +38,7 @@ const getProductId = (req, res, next) => {
     .get(`${apiUrl}/${productId}`)
     .then((response) => {
       const theProduct = response.data;
-      console.log("the product", theProduct);
+      // console.log("the product", theProduct);
       res.render("products/product-details.hbs", { product: theProduct });
     })
     .catch((error) => {
@@ -50,4 +50,36 @@ const getProductId = (req, res, next) => {
     });
 };
 
-module.exports = { getProducts, getProductId };
+let cartItems = [];
+
+const displayProductsInCart = () => {
+  return cartItems;
+};
+
+const addItemToCart = (req, res, next) => {
+  const productId = req.params.id;
+
+  axios
+    .get(apiUrl + "/" + productId)
+    .then((response) => {
+      const product = response.data;
+      // console.log("getCartDetails", product);
+      cartItems.push(product);
+      // res.render("carts", { product });
+      res.redirect("/carts");
+    })
+    // .then(() => {
+    //   res.redirect(``);
+    // })
+    .catch((error) => {
+      console.log("Error while fetching product from the API: ", error);
+      next(error);
+    });
+};
+
+module.exports = {
+  getProducts,
+  getProductId,
+  addItemToCart,
+  displayProductsInCart,
+};
