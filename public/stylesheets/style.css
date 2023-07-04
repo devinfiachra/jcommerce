@@ -22,3 +22,14 @@ h1 {
 #cart-icon {
   width: 30px;
 }
+
+#cart-circle {
+  background-color: white;
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
