@@ -9,4 +9,9 @@ router.get("/admin/dashboard", (req, res, next) => {
   res.render("admin/dashboard");
 });
 
+router.post("/admin/login", (req, res, next) => {
+  console.log(req.body);
+  res.redirect("admin/dashboard");
+});
+
 module.exports = router;
