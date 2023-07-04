@@ -7,9 +7,7 @@
       <img src=" {{this.image}}" alt="" />
       <p>Category : {{this.category}}</p>
       <p>Price : ${{this.price}}</p>
-      {{!-- <button>
-        <a href="/products/{{this.id}}">Buy Now</a>
-      </button> --}}
+
       <form action="/products/{{this.id}}" method="GET">
         <button type="submit">Buy Now</button>
       </form>

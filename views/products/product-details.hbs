@@ -1,5 +1,6 @@
-<h1>product details</h1>
 
+
+<h1>product details</h1>
 
 <div class="container">
   <div class="mx-auto">
@@ -15,8 +16,17 @@
       <p>Price: ${{product.price}}</p>
       <p>Description: {{product.description}}</p>
         <div class="button-container">
-          <button>Add to Cart</button>
-          <button><a href="/carts">Go to Cart</a></button>
+       
+  
+  
+    <form action="/carts/{{product.id}}" method="POST">
+    {{!-- <form action="/carts" method="POST"> --}}
+    <input type="hidden" name="id" value="{{product.id}}">
+    <button type="submit" class="add-btn">Add to Cart</button>
+    </form>
+
+    <button><a href="/carts">Go to Cart</a></button>
+  
       </div>
       </div>
     </div>
