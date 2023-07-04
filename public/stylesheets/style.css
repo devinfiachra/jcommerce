@@ -18,3 +18,7 @@ a {
 h1 {
   color: 15px;
 }
+
+#cart-icon {
+  width: 30px;
+}
