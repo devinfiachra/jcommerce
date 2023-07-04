@@ -11,11 +11,20 @@
             <h2 class="title">{{product.title}}</h2>
             <p class="price">${{product.price}}</p>
 
+            <div>
+              <p class="rating"></p>
+            </div>
+
             <p class="description">{{product.description}}</p>
+
     <form action="/carts/{{product.id}}" method="POST">
-    <input type="hidden" name="id" value="{{product.id}}">
-    <button type="submit" class="add-btn">Add to Cart</button>
+      <input type="hidden" name="id" value="{{product.id}}">
+      <button type="submit" class="add-btn">Add to Cart</button>
     </form>
+
         </div>
     </div>
 </div>
+
+
+
