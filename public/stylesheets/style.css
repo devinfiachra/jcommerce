@@ -23,7 +23,7 @@ h1 {
   width: 30px;
 }
 
-#cart-circle {
+#cart-button {
   background-color: white;
   border-radius: 50%;
   width: 45px;
@@ -31,5 +31,4 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-
 }
