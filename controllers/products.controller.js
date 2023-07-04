@@ -51,8 +51,12 @@ const getProductId = (req, res, next) => {
 };
 
 let cartItems = [];
-console.log("Cart :", cartItems.length);
-const getCartDetails = (req, res, next) => {
+
+const displayProductsInCart = () => {
+  return cartItems;
+};
+
+const addItemToCart = (req, res, next) => {
   const productId = req.params.id;
 
   axios
@@ -62,8 +66,7 @@ const getCartDetails = (req, res, next) => {
       // console.log("getCartDetails", product);
       cartItems.push(product);
       // res.render("carts", { product });
-      console.log(cartItems);
-      res.render("carts", { cartItems });
+      res.redirect("/carts");
     })
     // .then(() => {
     //   res.redirect(``);
@@ -74,4 +77,9 @@ const getCartDetails = (req, res, next) => {
     });
 };
 
-module.exports = { getProducts, getProductId, getCartDetails };
+module.exports = {
+  getProducts,
+  getProductId,
+  addItemToCart,
+  displayProductsInCart,
+};
