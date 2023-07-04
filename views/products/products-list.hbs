@@ -1,18 +1,16 @@
-<h1 style="text-align: center;">Latest Products</h1>
-<hr />
 
-<ul class="products">
-  {{#each products}}
-    <li style="list-style-type:none">
-      <img src=" {{this.image}}" alt="" />
-      <p>Category : {{this.category}}</p>
-      <p>Price : ${{this.price}}</p>
-      {{!-- <button>
-        <a href="/products/{{this.id}}">Buy Now</a>
-      </button> --}}
-      <form action="/products/{{this.id}}" method="GET">
-        <button type="submit">Buy Now</button>
-      </form>
-    </li>
-  {{/each}}
-</ul>
+
+<div class="container-fluid px-4c">
+  <div class="row gx-5">
+    {{#each products}}
+      <div class="col-3 product">
+        <a href="/products/{{id}}">
+          <img src=" {{image}}" alt="{{title}}" class="product-image img-fluid"/>
+          <p>{{title}}</h3>
+          <p>${{price}}</p>
+        </a>
+        <div class="btn btn-warning">Add to cart</div>
+      </div>
+    {{/each}}
+  </div>
+</div>
