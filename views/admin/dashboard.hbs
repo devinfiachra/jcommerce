@@ -1,22 +1,20 @@
 <div class="admin-container container-fluid">
 
+  <div id="admin-dashboard">
+    <h1>DASHBOARD</h1>
+  </div>
 
-<div id="admin-dashboard">
-  <h1>DASHBOARD</h1>
-</div>
+  <div class="row">
 
-<div class="row">
-
-
-  {{#each products}}
+    {{#each products}}
       <div class="col-3 product">
-        <img src="{{image}}" alt="{{title}}" class="product-image img-fluid"/>
+        <img src="{{image}}" alt="{{title}}" class="product-image img-fluid" />
         <p class="list-text">{{title}}</p>
         <p class="list-text">${{price}}</p>
         <div><a href="/admin/{{id}}/edit">Edit</a></div>
         <div><a href="/admin/{{id}}/delete">Delete</a></div>
       </div>
     {{/each}}
-</div>
+  </div>
 
 </div>

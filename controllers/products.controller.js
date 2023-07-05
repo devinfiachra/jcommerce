@@ -42,8 +42,8 @@ const getAdminProducts = (req, res, next) => {
   Product.find()
     .then((products) => {
       console.log("Retrieved products from DB:", products);
-      res.render("admin/dashboard.hbs", {
-        products: products,
+      res.render("admin/dashboard", {
+        products,
       });
     })
     .catch((error) => {

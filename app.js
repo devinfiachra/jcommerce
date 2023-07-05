@@ -27,10 +27,6 @@ app.get("/admin/login", (req, res) => {
   res.render("admin/login", { hideNavbar: true });
 });
 
-app.get("/admin/dashboard", (req, res) => {
-  res.render("admin/dashboard", { hideNavbar: true });
-});
-
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
