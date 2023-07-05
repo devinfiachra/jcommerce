@@ -35,6 +35,22 @@ const getProducts = (req, res, next) => {
     });
 };
 
+const getAdminProducts = (req, res, next) => {
+  axios
+    .get(apiUrl)
+    .then((response) => {
+      const productsFromAPI = response.data;
+      console.log("getproducts", productsFromAPI);
+      res.render("admin/dashboard.hbs", {
+        products: productsFromAPI,
+      });
+    })
+    .catch((error) => {
+      console.log("Error while fetching products from the API: ", error);
+      next(error);
+    });
+};
+
 const getProductId = (req, res, next) => {
   const { productId } = req.params;
 
@@ -89,4 +105,4 @@ const postDeleteProduct = (req, res, next) => {
 };
 
 
-module.exports = { getNewProduct, postNewProduct, getProducts, getProductId, getEditProduct, postEditProduct, postDeleteProduct };
+module.exports = { getNewProduct, postNewProduct, getProducts, getAdminProducts, getProductId, getEditProduct, postEditProduct, postDeleteProduct };

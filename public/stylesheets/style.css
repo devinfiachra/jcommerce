@@ -1,3 +1,10 @@
+@font-face {
+  font-family: "ocr";
+  src: url("/fonts/OCRAStd.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   height: 100%;
   margin: 0;
@@ -82,24 +89,25 @@ body {
 
 /* ADMIN CSS */
 
-#admin-container {
+.admin-container {
   position: absolute;
   top: 0;
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: #1d1d1d;
+  font-family: "ocr";
+  color: #00FF66;
   z-index: 100;
   overflow: hidden;
 }
 
 #admin-login {
   overflow: hidden;
-  color: springgreen;
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: #1d1d1d;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -108,7 +116,8 @@ body {
 }
 
 .admin-form {
-  color: springgreen;
+  color: #00FF66;
+  background-color: #1d1d1d;
   padding: 0;
   background: none;
   border: none;
@@ -125,7 +134,7 @@ body {
 }
 
 .admin-button {
-  border: 5px solid limegreen;
+  border: 5px solid #00FF66;
   width: 100%;
 }
 
@@ -140,11 +149,11 @@ body {
 }
 #admin-dashboard {
   overflow: hidden;
-  color: springgreen;
+  color: #00FF66;
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: #1d1d1d;
   display: flex;
   flex-direction: column;
   align-items: center;
