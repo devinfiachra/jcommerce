@@ -131,7 +131,12 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           // Remove the password field
           delete req.session.currentUser.password;
 
-          res.redirect("/");
+          // sonradan eklendi
+          const loggedInUsername = username;
+          req.session.loggedInUsername = loggedInUsername;
+
+          // res.redirect(`/`);
+          res.render("index", { loggedInUsername });
         })
         .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
     })
@@ -146,7 +151,7 @@ router.get("/logout", isLoggedIn, (req, res) => {
       return;
     }
 
-    res.redirect("/");
+    res.redirect("/auth/login");
   });
 });
 
