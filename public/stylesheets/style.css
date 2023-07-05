@@ -17,7 +17,6 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
-
 }
 
 .wrapper {
@@ -61,8 +60,10 @@ body {
   margin: 110px;
 }
 
-.detail-image {
-  padding: 30px;
+/* CART CSS */
+
+.cart-image {
+  width: 100px;
 }
 
 .detail-text {
@@ -97,7 +98,7 @@ body {
   height: 100vh;
   background-color: #1d1d1d;
   font-family: "ocr";
-  color: #00FF66;
+  color: #00ff66;
   z-index: 100;
   overflow: hidden;
 }
@@ -116,7 +117,7 @@ body {
 }
 
 .admin-form {
-  color: #00FF66;
+  color: #00ff66;
   background-color: #1d1d1d;
   padding: 0;
   background: none;
@@ -134,7 +135,7 @@ body {
 }
 
 .admin-button {
-  border: 5px solid #00FF66;
+  border: 5px solid #00ff66;
   width: 100%;
 }
 
@@ -149,7 +150,7 @@ body {
 }
 #admin-dashboard {
   overflow: hidden;
-  color: #00FF66;
+  color: #00ff66;
   margin: 0;
   width: 100vw;
   height: 100vh;

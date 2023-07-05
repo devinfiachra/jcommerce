@@ -1,49 +1,21 @@
-{{!-- <h1>CART</h1>
+<a href="/products"> BACK TO PRODUCTS</a>
 
-<section class="cart">
+<div class="cart">
   <div>
-    <h1 style="text-align: center;">Product Details</h1>
-    <hr />
-    <div class="product-details">
-      <div class="p-details">
-        <div class="image-container">
-          <img class="detail-img" src="{{product.image}}" alt="" />
-        </div>
-        <div class="content-container">
-          <p>Title: {{product.title}}</p>
-          <p>Price: ${{product.price}}</p>
-          <button>﹣</button>
-          <button>＋</button>
-
-          <div class="button-container">
-            <button><a href="/products">Back To Shopping</a></button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> --}}
-
-<h1>CART</h1>
-
-<section class="cart">
-  <div>
-    <h1 style="text-align: center;">Product Details</h1>
-    <hr />
     <div class="product-details">
       {{#each cartItems}}
         <div class="p-details">
           <div class="image-container">
-            <img class="detail-img" src="{{this.image}}" alt="" />
+            <img class="cart-image" src="{{this.image}}" alt={{this.title}} />
           </div>
           <div class="content-container">
-            <p>Title: {{this.title}}</p>
-            <p>Price: ${{this.price}}</p>
-            <p class="quantity">Quantity: 0</p>
-            <!-- Diğer ürün bilgilerini buraya ekleyin -->
+            <p> {{this.title}}</p>
+            <p> €{{this.price}}</p>
           </div>
         </div>
       {{/each}}
     </div>
   </div>
-</section>
+</div>
+
+<button>PROCEED TO CHECKOUT</button>
