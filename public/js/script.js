@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
 // star rating stars
 document.addEventListener("DOMContentLoaded", function() {
-  let ratingValue = product.rating;
+  let ratingValue = 4;
   let starsHTML = "";
 
   for (let i = 1; i <= 5; i++) {

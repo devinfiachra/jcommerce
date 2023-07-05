@@ -1,16 +1,16 @@
 
 
-<div class="container-fluid px-4c">
-  <div class="row gx-5">
+
+  <div class="row">
     {{#each products}}
       <div class="col-3 product">
         <a href="/products/{{id}}">
           <img src=" {{image}}" alt="{{title}}" class="product-image img-fluid"/>
-          <p>{{title}}</h3>
-          <p>${{price}}</p>
+          <p class="list-text">{{title}}</p>
+          <p class="list-text">${{price}}</p>
+          <div class="btn btn-warning">Add to cart</div>
+          <i class="fa-solid fa-cart-shopping cart"></i>
         </a>
-        <div class="btn btn-warning">Add to cart</div>
       </div>
     {{/each}}
   </div>
-</div>

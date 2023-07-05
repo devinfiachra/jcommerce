@@ -11,6 +11,7 @@ const productSchema = new Schema(
     },
     price: {
       type: Number,
+      scale: 2,
       required: true,
     },
     category: {
