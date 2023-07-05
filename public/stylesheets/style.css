@@ -1,14 +1,23 @@
+@font-face {
+  font-family: "ocr";
+  src: url("/fonts/OCRAStd.ttf");
+  font-weight: normal;
+  font-style: normal;
+}
+
 html {
   height: 100%;
   margin: 0;
   padding: 0;
-  margin-top: 80px;
+  padding-top: 60px;
+  background-color: rgb(255, 244, 227);
 }
 
 body {
   height: 100%;
   margin: 0;
   padding: 0;
+
 }
 
 .wrapper {
@@ -25,14 +34,27 @@ body {
 .product {
   border: 1px solid black;
   border-radius: 5px;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+  background-color: #f5f5f5;
+  padding: 20px;
+  height: 400px;
+  text-align: center;
+  overflow: auto;
+  margin: 30px 15px;
 }
 
 .product-image {
-  max-width: 300px;
+  max-width: 200px;
+  max-height: 200px;
+  padding-bottom: 20px;
+}
+
+.list-text {
+  color: black;
+}
+
+.list-text p:hover {
+  color: black;
+  text-decoration: none;
 }
 
 .product-detail {
@@ -67,24 +89,25 @@ body {
 
 /* ADMIN CSS */
 
-#admin-container {
+.admin-container {
   position: absolute;
   top: 0;
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: #1d1d1d;
+  font-family: "ocr";
+  color: #00FF66;
   z-index: 100;
   overflow: hidden;
 }
 
 #admin-login {
   overflow: hidden;
-  color: springgreen;
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: #1d1d1d;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -93,7 +116,8 @@ body {
 }
 
 .admin-form {
-  color: springgreen;
+  color: #00FF66;
+  background-color: #1d1d1d;
   padding: 0;
   background: none;
   border: none;
@@ -110,7 +134,7 @@ body {
 }
 
 .admin-button {
-  border: 5px solid limegreen;
+  border: 5px solid #00FF66;
   width: 100%;
 }
 
@@ -125,11 +149,11 @@ body {
 }
 #admin-dashboard {
   overflow: hidden;
-  color: springgreen;
+  color: #00FF66;
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-color: black;
+  background-color: #1d1d1d;
   display: flex;
   flex-direction: column;
   align-items: center;

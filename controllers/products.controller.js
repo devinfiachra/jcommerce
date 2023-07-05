@@ -3,6 +3,29 @@ const mongoose = require("mongoose");
 const Product = require("../models/Product.model.js");
 const mongoURI = process.env.MONGO_URI;
 
+const axios = require("axios");
+
+const getNewProduct = (req, res) => res.render("admin/product-create.hbs");
+
+const postNewProduct = (req, res, next) => {
+  const { title, description, price, category, rating, image, quantity } =
+    req.body;
+
+  Product.create({
+    title,
+    description,
+    price,
+    category,
+    rating,
+    image,
+    quantity,
+  })
+    .then(() => res.redirect("admin/dashboard"))
+    .catch((error) => next(error));
+};
+
+// new version with axios
+//Böylece, getProducts fonksiyonu artık API'den veri alacak ve dönen veriyi konsolda gösterecektir. Daha sonra şablonla işlem yapmak için bu veriyi kullanabilirsiniz.
 const getProducts = (req, res, next) => {
   Product.find()
     .then((allTheProductsFromDB) => {
@@ -13,6 +36,22 @@ const getProducts = (req, res, next) => {
     })
     .catch((error) => {
       console.log("Error while fetching products from the DB: ", error);
+      next(error);
+    });
+};
+
+const getAdminProducts = (req, res, next) => {
+  axios
+    .get(apiUrl)
+    .then((response) => {
+      const productsFromAPI = response.data;
+      console.log("getproducts", productsFromAPI);
+      res.render("admin/dashboard.hbs", {
+        products: productsFromAPI,
+      });
+    })
+    .catch((error) => {
+      console.log("Error while fetching products from the API: ", error);
       next(error);
     });
 };
@@ -60,9 +99,47 @@ const addItemToCart = (req, res, next) => {
     });
 };
 
+const getEditProduct = (req, res, next) => {
+  const { productId } = req.params;
+
+  Product.findById(productId)
+    .then((productToEdit) => {
+      res.render("admin/product-edit.hbs", { product: productToEdit });
+    })
+    .catch((error) => next(error));
+};
+
+const postEditProduct = (req, res, next) => {
+  const { productId } = req.params;
+  const { title, description, price, category, rating, image, quantity } =
+    req.body;
+
+  Product.findByIdAndUpdate(
+    productId,
+    { title, description, price, category, rating, image, quantity },
+    { new: true }
+  )
+    .then((updatedProduct) => res.redirect(`products/${updatedBook.id}`))
+    .catch((error) => next(error));
+};
+
+const postDeleteProduct = (req, res, next) => {
+  const { productId } = req.params;
+
+  Product.findByIdAndDelete(productId)
+    .then(() => res.redirect("admin/dashboard"))
+    .catch((error) => next(error));
+};
+
 module.exports = {
-  getProducts,
-  getProductId,
   addItemToCart,
   displayProductsInCart,
+  getNewProduct,
+  postNewProduct,
+  getProducts,
+  getAdminProducts,
+  getProductId,
+  getEditProduct,
+  postEditProduct,
+  postDeleteProduct,
 };

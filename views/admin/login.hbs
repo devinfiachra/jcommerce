@@ -1,4 +1,4 @@
-<div id="admin-container">
+<div class="admin-container container-fluid">
 
 
 <div id="admin-login">
@@ -8,30 +8,30 @@
     <div class="admin-login">
 
 
-   
+
    <div class="admin-label-holder">
-      <p>USERNAME:</p>
-      <input class="admin-form" type="text" name="username"/>
+      <label for="username">USERNAME:</label>
+      <input class="admin-form" type="text" name="username" id="username"/>
    </div>
-    
-    
-
-    <div class="admin-label-holder">
-      <p> PASSWORD: </p>
-      <input class="admin-form" type="password" name="password" />
-    </div>
 
 
 
     <div class="admin-label-holder">
-            <button class="admin-form admin-button" type="submit">LOGIN</button>
-    </div>
-    
-    
+      <label for="password">PASSWORD:</label>
+      <input class="admin-form" type="password" name="password" id="password"/>
     </div>
 
 
-    
+
+    <div class="admin-label-holder">
+      <button class="admin-form admin-button" type="submit">LOGIN</button>
+    </div>
+
+
+    </div>
+
+
+
 
     {{#if errorMessage}}
       <p class="error">{{errorMessage}}</p>
@@ -41,4 +41,3 @@
 </div>
 
 </div>
-
