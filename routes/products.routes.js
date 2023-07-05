@@ -9,11 +9,11 @@ router.get('/admin/create', productsController.getNewProduct);
 
 router.post('/admin/create', productsController.postNewProduct);
 
-router.get("/", productsController.getProducts);
+router.get("/products", productsController.getProducts);
 
 router.get("/admin/dashboard", productsController.getAdminProducts);
 
-router.get("/:productId", productsController.getProductId);
+router.get("products/:productId", productsController.getProductId);
 
 router.get('/admin/:productId/edit', productsController.getEditProduct);
 

@@ -27,10 +27,6 @@ app.get("/admin/login", (req, res) => {
   res.render("admin/login", { hideNavbar: true });
 });
 
-app.get("/admin/dashboard", (req, res) => {
-  res.render("admin/dashboard", { hideNavbar: true });
-});
-
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
 app.use("/", indexRoutes);
@@ -42,7 +38,7 @@ const favoritesRoutes = require("./routes/favorites.routes");
 app.use("/", favoritesRoutes);
 
 const productsRoutes = require("./routes/products.routes");
-app.use("/products", productsRoutes);
+app.use("/", productsRoutes);
 
 const purchasesRoutes = require("./routes/purchases.routes");
 app.use("/", purchasesRoutes);
