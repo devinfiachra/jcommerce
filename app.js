@@ -42,7 +42,7 @@ const favoritesRoutes = require("./routes/favorites.routes");
 app.use("/", favoritesRoutes);
 
 const productsRoutes = require("./routes/products.routes");
-app.use("/products", productsRoutes);
+app.use("/", productsRoutes);
 
 const purchasesRoutes = require("./routes/purchases.routes");
 app.use("/", purchasesRoutes);

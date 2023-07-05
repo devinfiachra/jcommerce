@@ -20,16 +20,14 @@ const postNewProduct = (req, res, next) => {
     image,
     quantity,
   })
-    .then(() => res.redirect("admin/dashboard"))
+    .then(() => res.redirect("/admin/dashboard"))
     .catch((error) => next(error));
 };
 
-// new version with axios
-//Böylece, getProducts fonksiyonu artık API'den veri alacak ve dönen veriyi konsolda gösterecektir. Daha sonra şablonla işlem yapmak için bu veriyi kullanabilirsiniz.
 const getProducts = (req, res, next) => {
   Product.find()
     .then((allTheProductsFromDB) => {
-      console.log("Retrieved books from DB:", allTheProductsFromDB);
+      console.log("Retrieved products from DB:", allTheProductsFromDB);
       res.render("products/products-list.hbs", {
         products: allTheProductsFromDB,
       });
@@ -41,17 +39,15 @@ const getProducts = (req, res, next) => {
 };
 
 const getAdminProducts = (req, res, next) => {
-  axios
-    .get(apiUrl)
-    .then((response) => {
-      const productsFromAPI = response.data;
-      console.log("getproducts", productsFromAPI);
+  Product.find()
+    .then((products) => {
+      console.log("Retrieved products from DB:", products);
       res.render("admin/dashboard.hbs", {
-        products: productsFromAPI,
+        products: products,
       });
     })
     .catch((error) => {
-      console.log("Error while fetching products from the API: ", error);
+      console.log("Error while fetching products from the DB: ", error);
       next(error);
     });
 };
@@ -127,7 +123,7 @@ const postDeleteProduct = (req, res, next) => {
   const { productId } = req.params;
 
   Product.findByIdAndDelete(productId)
-    .then(() => res.redirect("admin/dashboard"))
+    .then(() => res.redirect("/admin/dashboard"))
     .catch((error) => next(error));
 };
 
