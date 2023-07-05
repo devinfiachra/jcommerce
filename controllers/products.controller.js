@@ -1,25 +1,18 @@
 const mongoose = require("mongoose");
-const apiUrl = "https://fakestoreapi.com/products";
 
 const Product = require("../models/Product.model.js");
 const mongoURI = process.env.MONGO_URI;
 
-const axios = require("axios");
-
-// new version with axios
-
 const getProducts = (req, res, next) => {
-  axios
-    .get(apiUrl)
-    .then((response) => {
-      const productsFromAPI = response.data;
-      // console.log("getproducts", productsFromAPI);
+  Product.find()
+    .then((allTheProductsFromDB) => {
+      console.log("Retrieved books from DB:", allTheProductsFromDB);
       res.render("products/products-list.hbs", {
-        products: productsFromAPI,
+        products: allTheProductsFromDB,
       });
     })
     .catch((error) => {
-      console.log("Error while fetching products from the API: ", error);
+      console.log("Error while fetching products from the DB: ", error);
       next(error);
     });
 };
@@ -34,16 +27,13 @@ const getProductId = (req, res, next) => {
   //   .catch(error => {
   //     console.log('Error while retrieving product details: ', error);
 
-  axios
-    .get(`${apiUrl}/${productId}`)
-    .then((response) => {
-      const theProduct = response.data;
-      // console.log("the product", theProduct);
-      res.render("products/product-details.hbs", { product: theProduct });
-    })
+  Product.findById(productId)
+    .then((theProduct) =>
+      res.render("products/product-details.hbs", { product: theProduct })
+    )
     .catch((error) => {
       console.log(
-        "Error while retrieving product details from the API: ",
+        "Error while retrieving product details from the DB: ",
         error
       );
       next(error);
@@ -59,20 +49,13 @@ const displayProductsInCart = () => {
 const addItemToCart = (req, res, next) => {
   const productId = req.params.id;
 
-  axios
-    .get(apiUrl + "/" + productId)
-    .then((response) => {
-      const product = response.data;
-      // console.log("getCartDetails", product);
-      cartItems.push(product);
-      // res.render("carts", { product });
+  Product.findById(productId)
+    .then((theProduct) => {
+      cartItems.push(theProduct);
       res.redirect("/carts");
     })
-    // .then(() => {
-    //   res.redirect(``);
-    // })
     .catch((error) => {
-      console.log("Error while fetching product from the API: ", error);
+      console.log("Error while fetching product from the DB: ", error);
       next(error);
     });
 };
