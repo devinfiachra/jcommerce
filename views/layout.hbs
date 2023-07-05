@@ -11,6 +11,7 @@
   </head>
 
   <body>
+    {{#unless hideNavbar}}
     <nav class="navbar navbar-expand-lg bg-light fixed-top">
       <a class="navbar-brand" href="/">jcommerce</a>
       <button
@@ -37,9 +38,12 @@
         <div id="cart-button">
           <img src="./images/cart icon.png" alt="cart icon" id="cart-icon">
         </div>
-      </div>
-    </nav>
-
+          <div id="cart-button">
+            <img src="./images/cart icon.png" alt="cart icon" id="cart-icon">
+          </div>
+        </div>
+      </nav>
+    {{/unless}}
 
 
       <div class="container-fluid">
