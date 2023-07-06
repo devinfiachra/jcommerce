@@ -79,13 +79,36 @@ const addItemToCart = (req, res, next) => {
 };
 
 // last update
+// const deleteItemFromCart = (req, res, next) => {
+//   const productId = req.params.id;
+//   const userId = req.session.currentUser._id;
+
+//   User.findByIdAndUpdate(userId, { $pull: { carts: productId } })
+//     .then(() => {
+//       res.redirect("/carts");
+//     })
+//     .catch((error) => {
+//       console.log("Error while deleting item from the cart: ", error);
+//       next(error);
+//     });
+// };
+
 const deleteItemFromCart = (req, res, next) => {
-  const productId = req.params.id;
+  const productId = req.params.productId;
   const userId = req.session.currentUser._id;
 
   User.findByIdAndUpdate(userId, { $pull: { carts: productId } })
     .then(() => {
-      res.redirect("/carts");
+      // Ürünü başarılı bir şekilde sepetten kaldırdıktan sonra, güncellenmiş sepeti tekrar almak için kullanıcının verilerini getiriyoruz
+      User.findById(userId)
+        .populate("carts")
+        .then((user) => {
+          res.render("carts", { cartItems: user.carts });
+        })
+        .catch((error) => {
+          console.log("Error while fetching user data: ", error);
+          next(error);
+        });
     })
     .catch((error) => {
       console.log("Error while deleting item from the cart: ", error);
