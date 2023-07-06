@@ -128,8 +128,7 @@ router.post("/login", isLoggedOut, (req, res, next) => {
           req.session.currentUser = user.toObject();
           delete req.session.currentUser.password;
 
-          // res.redirect(`/`);
-          res.render("index");
+          res.redirect("/");
         })
         .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
     })
