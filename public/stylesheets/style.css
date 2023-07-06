@@ -110,6 +110,10 @@ nav {
   border-bottom: 5px solid orange;
 }
 
+#logo {
+  width: 40px;
+}
+
 button {
   border: 5px solid #00FF66;
   border-radius: 3px;
