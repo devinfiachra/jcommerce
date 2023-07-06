@@ -15,13 +15,25 @@
   <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
 
     <div class="nav-container ml-auto">
-      <p>Welcome {{loggedInUsername}}</p>
+     
+      {{!-- <p>{{loggedInUsername}}</p>
+      <a href="/products">All Products</a>
+      <a href="/auth/login">Login</a>
+      <a href="/auth/signup">Signup</a>
       <a href="/auth/logout" class="nav-btn">
-        Logout</a>
+        Logout</a> --}}
+
+       
+    <p>Welcome {{loggedInUsername}}</p>
+    <a href="/products">All Products</a>
+    <a href="/auth/signup">Signup</a>
+    <a href="/auth/login">Login</a>
+    <a href="/auth/logout" class="nav-btn">Logout</a>
+  
     </div>
 
-    <div id="cart-button">
-      <img src="./images/cart icon.png" alt="cart icon" id="cart-icon" />
+  <div id="cart-button">
+      <a href="/carts"><img src="./images/cart icon.png" alt="cart icon" id="cart-icon" /></a> 
     </div>
   </div>
 </nav>

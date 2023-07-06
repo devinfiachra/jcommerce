@@ -4,7 +4,8 @@ const mongoose = require("mongoose");
 const Product = require("../models/Product.model");
 
 const MONGO_URI =
-  /*process.env.MONGODB_URI ||*/ "mongodb://127.0.0.1:27017/jcommerce";
+  process.env.MONGODB_URI ||
+  "mongodb+srv://devinduffymeade:qkRcXfOOVKwdfL4T@jcommerce.mcegcbe.mongodb.net/?retryWrites=true&w=majority";
 
 let fakeStoreProducts = [];
 

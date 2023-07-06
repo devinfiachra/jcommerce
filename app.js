@@ -13,7 +13,22 @@ const express = require("express");
 // https://www.npmjs.com/package/hbs
 const hbs = require("hbs");
 
+const session = require("express-session");
+
 const app = express();
+
+app.use(
+  session({
+    secret: "UserName",
+    resave: false,
+    saveUninitialized: true,
+  })
+);
+
+app.use((req, res, next) => {
+  res.locals.loggedInUsername = req.session.loggedInUsername;
+  next();
+});
 
 // ℹ️ This function is getting exported from the config folder. It runs most pieces of middleware
 require("./config")(app);
@@ -21,9 +36,7 @@ require("./config")(app);
 const capitalize = require("./utils/capitalize");
 const projectName = "jcommerce";
 
-app.locals.appTitle = `${(projectName)}`;
-
-
+app.locals.appTitle = `${projectName}`;
 
 // 👇 Start handling routes here
 const indexRoutes = require("./routes/index.routes");
@@ -47,6 +60,9 @@ app.use("/", adminRoutes);
 // If you change this route from /carts to / it is not working !!!
 const cartRoutes = require("./routes/carts.routes");
 app.use("/carts", cartRoutes);
+
+const checkoutRoutes = require("./routes/checkout.routes");
+app.use("/", checkoutRoutes);
 
 // ❗ To handle errors. Routes that don't exist or errors that you handle in specific routes
 require("./error-handling")(app);

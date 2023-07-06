@@ -1,4 +1,5 @@
 const express = require("express");
+const session = require("express-session");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
@@ -106,7 +107,6 @@ router.post("/login", isLoggedOut, (req, res, next) => {
   // Search the database for a user with the email submitted in the form
   User.findOne({ email })
     .then((user) => {
-      console.log(user);
       // If the user isn't found, send an error message that user provided wrong credentials
       if (!user) {
         res
@@ -133,9 +133,19 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 
           // sonradan eklendi
           const loggedInUsername = username;
+          const userOnline = req.session.currentUser;
+          req.session.userOnline = userOnline;
           req.session.loggedInUsername = loggedInUsername;
 
-          // res.redirect(`/`);
+          console.log("USER:", req.session.currentUser);
+          console.log("//................//");
+          console.log("USER ID:", req.session.currentUser._id);
+          console.log("//................//");
+          // showing the cookie on the console
+          console.log("Active User :", req.session);
+          console.log("//................//");
+          console.log("Array Length :", req.session.currentUser.carts);
+
           res.render("index", { loggedInUsername });
         })
         .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
@@ -145,6 +155,14 @@ router.post("/login", isLoggedOut, (req, res, next) => {
 
 // GET /auth/logout
 router.get("/logout", isLoggedIn, (req, res) => {
+  // Check if the user is logged in
+  if (req.session.currentUser) {
+    // Delete the user cookie
+    res.clearCookie("user_sid");
+  }
+  // if we want to delete all the cart items from an array after logout
+  // req.session.currentUser.carts = [];
+
   req.session.destroy((err) => {
     if (err) {
       res.status(500).render("auth/logout", { errorMessage: err.message });

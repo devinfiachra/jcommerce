@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 
 const Product = require("../models/Product.model.js");
+const User = require("../models/User.model.js");
 const mongoURI = process.env.MONGO_URI;
 
 const getProducts = (req, res, next) => {
   Product.find()
     .then((allTheProductsFromDB) => {
-      console.log("Retrieved books from DB:", allTheProductsFromDB);
       res.render("products/products-list.hbs", {
         products: allTheProductsFromDB,
       });
@@ -48,14 +48,47 @@ const displayProductsInCart = () => {
 
 const addItemToCart = (req, res, next) => {
   const productId = req.params.id;
+  const userId = req.session.currentUser._id;
 
+  console.log(productId);
+  console.log(userId);
+
+  // Product.findById(productId)
+  //   .then((theProduct) => {
+  //     return User.findByIdAndUpdate(userId, {
+  //       $push: { carts: theProduct },
+  //     });
+  //     // cartItems.push(theProduct);
+  //     // res.redirect("/carts");
+  //   })
   Product.findById(productId)
     .then((theProduct) => {
-      cartItems.push(theProduct);
-      res.redirect("/carts");
+      return User.findById(userId)
+        .then((user) => {
+          user.carts.push(theProduct);
+          return user.save();
+        })
+        .then(() => {
+          res.redirect("/carts");
+        });
     })
     .catch((error) => {
       console.log("Error while fetching product from the DB: ", error);
+      next(error);
+    });
+};
+
+// last update
+const deleteItemFromCart = (req, res, next) => {
+  const productId = req.params.id;
+  const userId = req.session.currentUser._id;
+
+  User.findByIdAndUpdate(userId, { $pull: { carts: productId } })
+    .then(() => {
+      res.redirect("/carts");
+    })
+    .catch((error) => {
+      console.log("Error while deleting item from the cart: ", error);
       next(error);
     });
 };
@@ -65,4 +98,5 @@ module.exports = {
   getProductId,
   addItemToCart,
   displayProductsInCart,
+  deleteItemFromCart,
 };

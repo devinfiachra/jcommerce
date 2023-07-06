@@ -8,4 +8,7 @@ router.get("/:productId", productsController.getProductId);
 
 router.get("/", productsController.getProducts);
 
+//last update
+router.delete("/:productId", productsController.deleteItemFromCart);
+
 module.exports = router;

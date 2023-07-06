@@ -9,8 +9,15 @@
           <p>{{title}}</h3>
           <p>${{price}}</p>
         </a>
-        <div class="btn btn-warning">Add to cart</div>
+        <a href="/products/{{id}}">
+            <div class="btn btn-warning">Buy Now</div>
+          <img src=" {{image}}" alt="{{title}}" class="product-image img-fluid"/>
+          <p>{{title}}</h3>
+          <p>${{price}}</p>
+        </a>
+    
       </div>
     {{/each}}
+    {{name}}
   </div>
 </div>

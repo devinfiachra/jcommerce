@@ -1,0 +1,19 @@
+{{#if cartItems.length}}
+  <ul style="list-style-type: none;">
+    {{#each cartItems}}
+      <li>
+        <img src="{{this.image}}" alt="" />
+        <h3>{{this.title}}</h3>
+        <p>Price: ${{this.price}}</p>
+        <p>Quantity: {{this.quantity}}</p>
+        <button>Delete</button>
+      </li>
+
+    {{/each}}
+  </ul>
+
+{{else}}
+  <p>Your cart is empty.</p>
+{{/if}}
+<p>Total = 0</p>
+<button>PURCHASE ORDER</button>

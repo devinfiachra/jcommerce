@@ -1,31 +1,5 @@
 {{!-- <h1>CART</h1>
-
-<section class="cart">
-  <div>
-    <h1 style="text-align: center;">Product Details</h1>
-    <hr />
-    <div class="product-details">
-      <div class="p-details">
-        <div class="image-container">
-          <img class="detail-img" src="{{product.image}}" alt="" />
-        </div>
-        <div class="content-container">
-          <p>Title: {{product.title}}</p>
-          <p>Price: ${{product.price}}</p>
-          <button>﹣</button>
-          <button>＋</button>
-
-          <div class="button-container">
-            <button><a href="/products">Back To Shopping</a></button>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section> --}}
-
-<h1>CART</h1>
-
+<button>CHECKOUT</button>
 <section class="cart">
   <div>
     <h1 style="text-align: center;">Product Details</h1>
@@ -41,9 +15,57 @@
             <p>Price: ${{this.price}}</p>
             <p class="quantity">Quantity: 0</p>
             <!-- Diğer ürün bilgilerini buraya ekleyin -->
+
           </div>
         </div>
       {{/each}}
+      <a href="/products">Back To Shopping</a>
     </div>
   </div>
-</section>
+</section> --}}
+
+{{!-- <button>CHECKOUT</button>
+<button type="submit">Delete All</button>
+<h1>Shopping Cart</h1>
+{{#if cartItems.length}}
+  <ul style="list-style-type: none;">
+    {{#each cartItems}}
+      <li>
+        <img src="{{this.image}}" alt="" />
+        <h3>{{this.title}}</h3>
+        <p>Price: ${{this.price}}</p>
+        <p>Quantity: {{this.quantity}}</p>
+        <button type="submit">Delete Cart</button>
+      </li>
+    {{/each}}
+  </ul>
+{{else}}
+  <p>Your cart is empty.</p>
+{{/if}} --}}
+
+<button class="checkout">Checkout</button>
+
+<a href="/products" class="back-to-shopping">Back To Shopping</a>
+{{#if cartItems.length}}
+  <ul style="list-style-type: none;">
+    {{#each cartItems}}
+      <li>
+        <img src="{{this.image}}" alt="" />
+        <h3>{{this.title}}</h3>
+        <p>Price: ${{this.price}}</p>
+        <p>Quantity: {{this.quantity}}</p>
+        {{!-- <form action="/carts/{{this._id}}" method="POST">
+          <button type="submit">Delete</button>
+        </form> --}}
+
+        {{! last update }}
+        <form action="/carts/{{this._id}}?_method=DELETE" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    {{/each}}
+  </ul>
+
+{{else}}
+  <p>Your cart is empty.</p>
+{{/if}}

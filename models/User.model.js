@@ -20,8 +20,7 @@ const userSchema = new Schema(
       required: true,
       minlength: 6,
     },
-    // // erick ile eklenen kısım
-    // carts: [],
+    carts: [],
   },
 
   {
