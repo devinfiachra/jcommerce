@@ -7,7 +7,8 @@ const purchaseSchema = new Schema(
       ref: 'User'
     },
     price: {
-      type: Number
+      type: Number,
+      scale: 2
     },
     shippingAddress: {
       name: {type: String},
