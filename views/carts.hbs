@@ -34,16 +34,22 @@
       {{#each cartItems}}
         <div class="p-details">
           <div class="image-container">
-            <img class="detail-img" src="{{this.image}}" alt="" />
+            <img class="detail-img" src="{{this.product.image}}" alt="" />
           </div>
           <div class="content-container">
-            <p>Title: {{this.title}}</p>
-            <p>Price: ${{this.price}}</p>
-            <p class="quantity">Quantity: 0</p>
+            <p>Title: {{this.product.title}}</p>
+            <p>Price: ${{this.product.price}}</p>
+            <p class="quantity">Quantity: {{this.quantity}}</p>
+
+            <form action="/carts/{{product.id}}" method="POST">
+              <input type="hidden" name="id" value="{{this.product.id}}" />
+              <button type="submit" class="add-btn">+</button>
+            </form>
             <!-- Diğer ürün bilgilerini buraya ekleyin -->
           </div>
         </div>
       {{/each}}
     </div>
+    <div><p>Total: {{cartTotal}}</p></div>
   </div>
 </section>

@@ -5,10 +5,11 @@ const productsController = require("../controllers/products.controller");
 /* GET cart page */
 router.get("/", (req, res, next) => {
   let cartItems = productsController.displayProductsInCart();
+  let cartTotal = productsController.displayTotalPrice();
 
-  console.log("THE CART IN CART", cartItems);
+  console.log("total ", cartTotal);
 
-  res.render("carts", { cartItems });
+  res.render("carts", { cartItems, cartTotal });
 });
 
 // router.get("/:id", productsController.getCartDetails);
