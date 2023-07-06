@@ -60,7 +60,6 @@ router.post("/signup", isLoggedOut, (req, res, next) => {
       return User.create({ username, email, password: hashedPassword });
     })
     .then((user) => {
-      console.log("REGISTER NEW USER: ", user.toObject());
       req.session.currentUser = user.toObject();
       delete req.session.currentUser.password;
       res.redirect("/");
@@ -108,7 +107,6 @@ router.post("/login", isLoggedOut, (req, res, next) => {
   // Search the database for a user with the email submitted in the form
   User.findOne({ username })
     .then((user) => {
-      console.log(user);
       // If the user isn't found, send an error message that user provided wrong credentials
       if (!user) {
         res
@@ -146,7 +144,9 @@ router.get("/logout", isLoggedIn, (req, res) => {
       return;
     }
 
-    res.redirect("/auth/login");
+    // EMPTY BASKET ON LOGOUT
+
+    res.redirect("/");
   });
 });
 

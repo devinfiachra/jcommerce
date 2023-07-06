@@ -7,8 +7,6 @@ router.get("/", (req, res, next) => {
   let cartItems = productsController.displayProductsInCart();
   let cartTotal = productsController.displayTotalPrice();
 
-  console.log("total ", cartTotal);
-
   res.render("carts", { cartItems, cartTotal });
 });
 
