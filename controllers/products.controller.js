@@ -75,10 +75,19 @@ const getProductId = (req, res, next) => {
     });
 };
 
-let cartItems = [];
+let cartItems = []; // array of {product: theProduct, quantity: x}
 
 const displayProductsInCart = () => {
   return cartItems;
+};
+
+const displayTotalPrice = () => {
+  let total = 0;
+  for (let index = 0; index < cartItems.length; index++) {
+    const element = cartItems[index];
+    total = total + element.product.price * element.quantity;
+  }
+  return total;
 };
 
 const addItemToCart = (req, res, next) => {
@@ -86,7 +95,24 @@ const addItemToCart = (req, res, next) => {
 
   Product.findById(productId)
     .then((theProduct) => {
-      cartItems.push(theProduct);
+      //check if there's the same product in the array
+      let found = false;
+      for (let index = 0; index < cartItems.length; index++) {
+        let cartElement = cartItems[index];
+        if (cartElement.product.title === theProduct.title) {
+          //just update the quantity field {product: theProduct, quantity: x++}
+          cartElement.quantity++;
+          found = true;
+          index = cartItems.length; // end the loop
+        }
+      }
+
+      if (!found) {
+        // add the item to cartItems
+        const newCartItem = { product: theProduct, quantity: 1 };
+        cartItems.push(newCartItem);
+      }
+
       res.redirect("/carts");
     })
     .catch((error) => {
@@ -138,4 +164,5 @@ module.exports = {
   getEditProduct,
   postEditProduct,
   postDeleteProduct,
+  displayTotalPrice,
 };
