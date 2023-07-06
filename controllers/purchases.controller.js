@@ -15,7 +15,7 @@ const postNewPurchase = (req, res, next) => {
     city: city,
     country: country
   };
-  let price = 20000;
+  let price = 689;
   Purchase.create({ user, price, shippingAddress })
     .then(() => res.render("success.hbs"))
     .catch((error) => next(error));

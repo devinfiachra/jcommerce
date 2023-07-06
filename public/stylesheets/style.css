@@ -5,19 +5,25 @@
   font-style: normal;
 }
 
+* {
+  font-family: "ocr";
+  color: #00FF66;
+  background-color: #1d1d1d;
+}
+
 html {
   height: 100%;
   margin: 0;
   padding: 0;
-  padding-top: 60px;
-  background-color: rgb(255, 244, 227);
+  padding-top: 80px;
+  background-color: #1d1d1d;
 }
 
 body {
   height: 100%;
   margin: 0;
   padding: 0;
-
+  background-color: #1d1d1d;
 }
 
 .wrapper {
@@ -26,15 +32,22 @@ body {
   min-height: 100%;
 }
 
-.footer {
+footer {
   height: 200px;
-  background-color: #f5f5f5;
+  background-color: #1d1d1d;
+  border: 5px solid orange;
+  border-radius: 3px;
+}
+
+footer h5, footer p, footer span {
+  color: orange;
 }
 
 .product {
-  border: 1px solid black;
-  border-radius: 5px;
-  background-color: #f5f5f5;
+  background-color: #1d1d1d;
+  border: 5px solid #00FF66;
+  border-radius: 3px;
+  color: #00FF66;
   padding: 20px;
   height: 400px;
   text-align: center;
@@ -48,12 +61,10 @@ body {
   padding-bottom: 20px;
 }
 
-.list-text {
-  color: black;
-}
+
 
 .list-text p:hover {
-  color: black;
+  color: #00FF66;
   text-decoration: none;
 }
 
@@ -78,13 +89,40 @@ body {
 }
 
 #cart-button {
-  background-color: white;
+  background-color: #1d1d1d;
   border-radius: 50%;
   width: 45px;
   height: 45px;
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.navbar-brand {
+  color: orange;
+}
+
+.nav-btn {
+  color: orange;
+}
+
+nav {
+  border-bottom: 5px solid orange;
+}
+
+button {
+  border: 5px solid #00FF66;
+  border-radius: 3px;
+}
+
+a {
+  color: #00FF66;
+  text-decoration: none;
+}
+
+a:hover {
+  color: #00FF66;
+  text-decoration: none;
 }
 
 /* ADMIN CSS */
@@ -95,7 +133,7 @@ body {
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-color: white;
+  background-color: #1d1d1d;
   font-family: "ocr";
   color: #00FF66;
   z-index: 100;
