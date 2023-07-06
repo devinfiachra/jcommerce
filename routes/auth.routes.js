@@ -60,6 +60,8 @@ router.post("/signup", isLoggedOut, (req, res, next) => {
       return User.create({ username, email, password: hashedPassword });
     })
     .then((user) => {
+      req.session.currentUser = user.toObject();
+      delete req.session.currentUser.password;
       res.redirect("/");
     })
     .catch((error) => {
@@ -83,13 +85,12 @@ router.get("/login", isLoggedOut, (req, res) => {
 
 // POST /auth/login
 router.post("/login", isLoggedOut, (req, res, next) => {
-  const { username, email, password } = req.body;
+  const { username, password } = req.body;
 
   // Check that username, email, and password are provided
-  if (username === "" || email === "" || password === "") {
+  if (username === "" || password === "") {
     res.status(400).render("auth/login", {
-      errorMessage:
-        "All fields are mandatory. Please provide username, email and password.",
+      errorMessage: "Please provide your username and password.",
     });
 
     return;
@@ -104,9 +105,8 @@ router.post("/login", isLoggedOut, (req, res, next) => {
   }
 
   // Search the database for a user with the email submitted in the form
-  User.findOne({ email })
+  User.findOne({ username })
     .then((user) => {
-      console.log(user);
       // If the user isn't found, send an error message that user provided wrong credentials
       if (!user) {
         res
@@ -126,17 +126,10 @@ router.post("/login", isLoggedOut, (req, res, next) => {
             return;
           }
 
-          // Add the user object to the session object
           req.session.currentUser = user.toObject();
-          // Remove the password field
           delete req.session.currentUser.password;
 
-          // sonradan eklendi
-          const loggedInUsername = username;
-          req.session.loggedInUsername = loggedInUsername;
-
-          // res.redirect(`/`);
-          res.render("index", { loggedInUsername });
+          res.redirect("/");
         })
         .catch((err) => next(err)); // In this case, we send error handling to the error handling middleware.
     })
@@ -151,7 +144,9 @@ router.get("/logout", isLoggedIn, (req, res) => {
       return;
     }
 
-    res.redirect("/auth/login");
+    // EMPTY BASKET ON LOGOUT
+
+    res.redirect("/");
   });
 });
 

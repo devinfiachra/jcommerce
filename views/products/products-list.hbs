@@ -1,12 +1,15 @@
-
 <div class="container-fluid">
 
-    <h1>whatever, just one click away...</h1>
+  <h1>whatever, just one click away...</h1>
   <div class="row">
     {{#each products}}
-      <div class="col-3 product">
+      <div class="product">
         <a href="/products/{{id}}">
-          <img src=" {{image}}" alt="{{title}}" class="product-image img-fluid"/>
+          <img
+            src=" {{image}}"
+            alt="{{title}}"
+            class="product-image img-fluid"
+          />
           <p class="list-text">{{title}}</p>
           <p class="list-text">${{price}}</p>
         </a>

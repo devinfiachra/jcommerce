@@ -5,25 +5,38 @@
   font-style: normal;
 }
 
+:root {
+  --primary-color: black;
+  --secondary-color: rebeccapurple;
+  --tertiary-color: orange;
+  --text-color: #00ff66;
+}
+
+/*
+var(--primary);
+var(--secondary);
+var(--tertiary);
+*/
+
 * {
   font-family: "ocr";
-  color: #00FF66;
-  background-color: #1d1d1d;
+  color: var(--text-color);
+  background-color: var(--primary-color);
 }
 
 html {
-  height: 100%;
+  height: 1%;
   margin: 0;
   padding: 0;
   padding-top: 80px;
-  background-color: #1d1d1d;
+  background-color: var(--primary-color);
 }
 
 body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #1d1d1d;
+  background-color: var(--primary-color);
 }
 
 .wrapper {
@@ -34,20 +47,22 @@ body {
 
 footer {
   height: 200px;
-  background-color: #1d1d1d;
-  border: 5px solid orange;
+  background-color: var(--primary-color);
+  border: 5px solid var(--secondary-color);
   border-radius: 3px;
 }
 
-footer h5, footer p, footer span {
-  color: orange;
+footer h5,
+footer p,
+footer span {
+  color: var(--secondary-color);
 }
 
 .product {
-  background-color: #1d1d1d;
-  border: 5px solid #00FF66;
+  background-color: var(--primary-color);
+  border: 5px solid var(--secondary-color);
   border-radius: 3px;
-  color: #00FF66;
+  color: var(--text-color);
   padding: 20px;
   height: 400px;
   text-align: center;
@@ -61,10 +76,8 @@ footer h5, footer p, footer span {
   padding-bottom: 20px;
 }
 
-
-
 .list-text p:hover {
-  color: #00FF66;
+  color: var(--text-color);
   text-decoration: none;
 }
 
@@ -81,7 +94,7 @@ footer h5, footer p, footer span {
 }
 
 .rating {
-  color: orange;
+  color: var(--tertiary-color);
 }
 
 #cart-icon {
@@ -89,7 +102,7 @@ footer h5, footer p, footer span {
 }
 
 #cart-button {
-  background-color: #1d1d1d;
+  background-color: var(--primary-color);
   border-radius: 50%;
   width: 45px;
   height: 45px;
@@ -100,24 +113,24 @@ footer h5, footer p, footer span {
 }
 
 .navbar-brand {
-  color: orange;
+  color: var(--tertiary-color);
 }
 
 .navbar-brand:hover {
-  color: orange;
+  color: var(--tertiary-color);
 }
 
 .nav-btn {
-  color: orange;
+  color: var(--tertiary-color);
 }
 
 .nav-btn:hover {
-  color: orange;
+  color: var(--tertiary-color);
   text-decoration: none;
 }
 
 nav {
-  border-bottom: 5px solid orange;
+  border-bottom: 5px solid var(--tertiary-color);
 }
 
 #logo {
@@ -126,17 +139,17 @@ nav {
 }
 
 button {
-  border: 5px solid #00FF66;
+  border: 5px solid var(--text-color);
   border-radius: 3px;
 }
 
 a {
-  color: #00FF66;
+  color: var(--text-color);
   text-decoration: none;
 }
 
 a:hover {
-  color: #00FF66;
+  color: var(--text-color);
   text-decoration: none;
 }
 
@@ -148,9 +161,9 @@ a:hover {
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #1d1d1d;
+  background-color: var(--primary-color);
   font-family: "ocr";
-  color: #00FF66;
+  color: var(--text-color);
   z-index: 100;
   overflow: hidden;
 }
@@ -160,7 +173,7 @@ a:hover {
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #1d1d1d;
+  background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -169,8 +182,8 @@ a:hover {
 }
 
 .admin-form {
-  color: #00FF66;
-  background-color: #1d1d1d;
+  color: var(--text-color);
+  background-color: var(--primary-color);
   padding: 0;
   background: none;
   border: none;
@@ -187,7 +200,7 @@ a:hover {
 }
 
 .admin-button {
-  border: 5px solid #00FF66;
+  border: 5px solid var(--text-color);
   width: 100%;
 }
 
@@ -202,11 +215,11 @@ a:hover {
 }
 #admin-dashboard {
   overflow: hidden;
-  color: #00FF66;
+  color: var(--text-color);
   margin: 0;
   width: 100vw;
   height: 100vh;
-  background-color: #1d1d1d;
+  background-color: var(--primary-color);
   display: flex;
   flex-direction: column;
   align-items: center;

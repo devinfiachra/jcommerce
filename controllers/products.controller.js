@@ -27,13 +27,11 @@ const postNewProduct = (req, res, next) => {
 const getProducts = (req, res, next) => {
   Product.find()
     .then((allTheProductsFromDB) => {
-      console.log("Retrieved products from DB:", allTheProductsFromDB);
       res.render("products/products-list.hbs", {
         products: allTheProductsFromDB,
       });
     })
     .catch((error) => {
-      console.log("Error while fetching products from the DB: ", error);
       next(error);
     });
 };
@@ -41,13 +39,11 @@ const getProducts = (req, res, next) => {
 const getAdminProducts = (req, res, next) => {
   Product.find()
     .then((products) => {
-      console.log("Retrieved products from DB:", products);
       res.render("admin/dashboard", {
         products,
       });
     })
     .catch((error) => {
-      console.log("Error while fetching products from the DB: ", error);
       next(error);
     });
 };
@@ -55,22 +51,11 @@ const getAdminProducts = (req, res, next) => {
 const getProductId = (req, res, next) => {
   const { productId } = req.params;
 
-  // Product.findById(productId)
-  //   .then((theProduct) => {
-  //     console.log(theProduct)
-  //     res.render('products/product-details.hbs', { product: theProduct })})
-  //   .catch(error => {
-  //     console.log('Error while retrieving product details: ', error);
-
   Product.findById(productId)
     .then((theProduct) =>
       res.render("products/product-details.hbs", { product: theProduct })
     )
     .catch((error) => {
-      console.log(
-        "Error while retrieving product details from the DB: ",
-        error
-      );
       next(error);
     });
 };
@@ -116,12 +101,9 @@ const addItemToCart = (req, res, next) => {
       res.redirect("/carts");
     })
     .catch((error) => {
-      console.log("Error while fetching product from the DB: ", error);
       next(error);
     });
 };
-
-
 
 const getEditProduct = (req, res, next) => {
   const { productId } = req.params;

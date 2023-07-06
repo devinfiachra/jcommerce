@@ -1,15 +1,10 @@
 <div id="login-form">
-  <h2>Log In</h2>
+  <h2>WELCOME JCOMMER, LOG IN HERE</h2>
   <form action="/auth/login" method="POST">
 
     <label>
       Username
       <input type="text" name="username" placeholder="Your username" />
-    </label>
-
-    <label>
-      Email
-      <input type="email" name="email" placeholder="Your email" />
     </label>
 
     <label>
@@ -23,4 +18,6 @@
       <p class="error">{{errorMessage}}</p>
     {{/if}}
   </form>
+
+  <a href="/auth/signup"><button>NOT A MEMBER YET? REGISTER HERE</button></a>
 </div>
