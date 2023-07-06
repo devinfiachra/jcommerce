@@ -1,13 +1,13 @@
-<h1>purchases list</h1>
-
+<h1>Your orders</h1>
+<br>
 <div class="container">
   <div class="row">
     {{#each purchases}}
     <div class="col-3">
-      <img src="{{image_url}}" alt="{{title}}">
+      <img src="{{product.image}}" alt="{{product.title}}">
       <div>
-        <h3>{{date}}</h3>
-        <h3>{{_id}}</h3>
+        <p>{{date}}</p>
+        <p>{{id}}</p>
         <p class="ml-auto">{{price}}</p>
       </div>
     </div>
