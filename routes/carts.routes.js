@@ -25,6 +25,6 @@ router.get("/", isLoggedIn, (req, res, next) => {
 router.post("/:id", isLoggedIn, productsController.addItemToCart);
 
 // last update
-router.delete("/:productId", isLoggedIn, productsController.deleteItemFromCart);
+// router.delete("/:productId", isLoggedIn, productsController.deleteItemFromCart);
 
 module.exports = router;
