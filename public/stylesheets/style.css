@@ -96,14 +96,24 @@ footer h5, footer p, footer span {
   display: flex;
   justify-content: center;
   align-items: center;
+  margin-left: 10px;
 }
 
 .navbar-brand {
   color: orange;
 }
 
+.navbar-brand:hover {
+  color: orange;
+}
+
 .nav-btn {
   color: orange;
+}
+
+.nav-btn:hover {
+  color: orange;
+  text-decoration: none;
 }
 
 nav {
@@ -112,6 +122,7 @@ nav {
 
 #logo {
   width: 40px;
+  margin-right: 10px;
 }
 
 button {
