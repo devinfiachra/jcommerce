@@ -1,10 +1,23 @@
 const Purchase = require("../models/Purchase.model.js");
 
-const postNewPurchase = (req, res, next) => {
-  const { product, user, price, shippingAddress, date } = req.body;
 
-  Purchase.create({ product, user, price, shippingAddress, date })
-    .then(() => res.redirect("/purchases"))
+const getNewPurchase = (req, res) => {res.render("checkout.hbs")};
+
+const postNewPurchase = (req, res, next) => {
+  let { name, street, city, country } = req.body;
+  console.log(req.body);
+  let user = req.session.currentUser
+  console.log("User Cookie: ", user)
+
+  let shippingAddress = {
+    name: name,
+    street: street,
+    city: city,
+    country: country
+  };
+  let price = 689;
+  Purchase.create({ user, price, shippingAddress })
+    .then(() => res.render("success.hbs"))
     .catch((error) => next(error));
 };
 
@@ -38,4 +51,4 @@ const getPurchaseId = (req, res, next) => {
     });
 };
 
-module.exports = { postNewPurchase, getPurchases, getPurchaseId };
+module.exports = { getNewPurchase, postNewPurchase, getPurchases, getPurchaseId };

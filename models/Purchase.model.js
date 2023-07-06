@@ -2,19 +2,19 @@ const { Schema, model } = require("mongoose");
 
 const purchaseSchema = new Schema(
   {
-    product: {
-      type: Schema.Types.ObjectId,
-      ref: 'Product'
-    },
     user: {
       type: Schema.Types.ObjectId,
       ref: 'User'
     },
     price: {
-      type: Number
+      type: Number,
+      scale: 2
     },
     shippingAddress: {
-      type: String
+      name: {type: String},
+      street: {type: String},
+      city: {type: String},
+      country: {type: String}
     },
     date: {
       type: Date,

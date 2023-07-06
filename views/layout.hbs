@@ -8,12 +8,13 @@
     <link rel="stylesheet" href="/stylesheets/style.css" />
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
   </head>
 
   <body>
-    {{#unless hideNavbar}}
-    <nav class="navbar navbar-expand-lg bg-light fixed-top">
-      <a class="navbar-brand" href="/products">jcommerce</a>
+
+    <nav class="navbar navbar-expand-lg fixed-top">
+      <a class="navbar-brand" href="/">jcommerce</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -35,16 +36,13 @@
       Logout</a>
       </div>
 
-
-
-          <div id="cart-button">
-            <a href="/carts">
-                <img src="./images/cart icon.png" alt="cart icon" id="cart-icon">
-            </a>
-          </div>
+        <div id="cart-button">
+          <img src="./images/cart icon.png" alt="cart icon" id="cart-icon">
         </div>
+
+
       </nav>
-    {{/unless}}
+
 
 
       <div class="container-fluid">
@@ -52,7 +50,7 @@
       </div>
 
 
-      <footer class="text-white text-center text-lg-start footer" style="background-color: #c4c4c6;">
+      <footer class="text-white text-center text-lg-start footer">
 
 
         <!-- Grid container -->
@@ -83,17 +81,17 @@
 
             <div class="fa-ul" style="margin-left: 1.65em;">
               <div class="mb-3">
-                <span class="fa-li"><i class="fas fa-home"></i></span><span class="ms-2">Storkower Straße 132<br />
+                <span class="ms-2">Storkower Straße 132<br />
             10407 Berlin
             <br />
             Germany
             <br /></span>
               </div>
               <div class="mb-3">
-                <span class="fa-li"><i class="fas fa-envelope"></i></span><span class="ms-2">info@jcommerce.com</span>
+                <span class="ms-2">info@jcommerce.com</span>
               </div>
               <div class="mb-3">
-                <span class="fa-li"><i class="fas fa-phone"></i></span><span class="ms-2">+49 30 12 34 56 78</span>
+                <span class="ms-2">+49 30 12 34 56 78</span>
               </div>
             </div>
           </div>
@@ -107,6 +105,7 @@
               frameborder="0"
               style="border:0"
               allowfullscreen=""
+              id="map"
             ></iframe>
           </div>
           <!--Grid column-->
@@ -116,8 +115,8 @@
         <!-- Grid container -->
 
         <!-- Copyright -->
-        <div class="text-center p-3" style="background-color: rgb(155, 155, 155);">
-        © 2023 jcommerce
+        <div class="text-center p-3";">
+        <p>© 2023 jcommerce</p>
       </div>
 
      <!-- Copyright -->

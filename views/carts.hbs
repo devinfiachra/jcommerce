@@ -24,12 +24,13 @@
   </div>
 </section> --}}
 
+
 <h1>CART</h1>
 
 <section class="cart">
   <div>
-    <h1 style="text-align: center;">Product Details</h1>
-    <hr />
+
+    
     <div class="product-details">
       {{#each cartItems}}
         <div class="p-details">
@@ -44,12 +45,15 @@
             <form action="/carts/{{product.id}}" method="POST">
               <input type="hidden" name="id" value="{{this.product.id}}" />
               <button type="submit" class="add-btn">+</button>
+              <button type="submit" class="add-btn" id="minus">-</button>
             </form>
-            <!-- Diğer ürün bilgilerini buraya ekleyin -->
           </div>
         </div>
       {{/each}}
     </div>
     <div><p>Total: {{cartTotal}}</p></div>
+    <button>
+      <a href="/checkout">Proceed to checkout</a>
+    </button>
   </div>
 </section>

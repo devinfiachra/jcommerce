@@ -121,6 +121,8 @@ const addItemToCart = (req, res, next) => {
     });
 };
 
+
+
 const getEditProduct = (req, res, next) => {
   const { productId } = req.params;
 
