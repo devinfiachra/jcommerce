@@ -8,7 +8,7 @@
 * {
   font-family: "ocr";
   color: #00ff66;
-  background-color: #1d1d1d;
+  background-color: black;
 }
 
 html {
@@ -16,14 +16,14 @@ html {
   margin: 0;
   padding: 0;
   padding-top: 80px;
-  background-color: #1d1d1d;
+  background-color: black;
 }
 
 body {
   height: 100%;
   margin: 0;
   padding: 0;
-  background-color: #1d1d1d;
+  background-color: black;
 }
 
 .wrapper {
@@ -34,7 +34,7 @@ body {
 
 footer {
   height: 200px;
-  background-color: #1d1d1d;
+  background-color: black;
   border: 5px solid orange;
   border-radius: 3px;
 }
@@ -46,8 +46,8 @@ footer span {
 }
 
 .product {
-  background-color: #1d1d1d;
-  border: 5px solid #00ff66;
+  background-color: black;
+  border: 5px solid rebeccapurple;
   border-radius: 3px;
   color: #00ff66;
   padding: 20px;
