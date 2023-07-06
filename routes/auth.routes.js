@@ -60,6 +60,9 @@ router.post("/signup", isLoggedOut, (req, res, next) => {
       return User.create({ username, email, password: hashedPassword });
     })
     .then((user) => {
+      console.log("REGISTER NEW USER: ", user.toObject());
+      req.session.currentUser = user.toObject();
+      delete req.session.currentUser.password;
       res.redirect("/");
     })
     .catch((error) => {
