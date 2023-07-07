@@ -243,3 +243,28 @@ a:hover {
   align-items: center;
   justify-content: center;
 }
+
+.receipt-container {
+  min-height: 100vh;
+  width: 99%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.receipt {
+  border: 5px solid red;
+}
+
+.purchase {
+  border: 2px solid var(--secondary-color);
+  display: flex;
+  align-items: flex-start;
+  width: 20%;
+  padding: 1%;
+  overflow: hidden;
+  padding: 1%;
+  margin: 2%;
+}
