@@ -30,12 +30,12 @@
 <section class="cart">
   <div>
 
-    
+
     <div class="product-details">
       {{#each cartItems}}
         <div class="p-details">
           <div class="image-container">
-            <img class="detail-img" src="{{this.product.image}}" alt="" />
+            <img class="detail-img" src="{{this.product.image}}" alt="" class="product-image"/>
           </div>
           <div class="content-container">
             <p>Title: {{this.product.title}}</p>
@@ -53,7 +53,7 @@
     </div>
     <div><p>Total: {{cartTotal}}</p></div>
     <button>
-      <a href="/checkout">Proceed to checkout</a>
+      <a href="/checkout" id="proceed">Proceed to checkout</a>
     </button>
   </div>
 </section>

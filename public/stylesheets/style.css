@@ -83,6 +83,7 @@ footer span {
 
 .product-detail {
   margin: 110px;
+
 }
 
 .detail-image {
@@ -225,4 +226,21 @@ a:hover {
   align-items: center;
   justify-content: center;
   z-index: 150;
+}
+
+.p-details {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#proceed {
+  text-decoration: none;
+  color: var(--text-color);
+}
+
+#proceed:hover {
+  text-decoration: none;
+  color: var(--text-color);
 }
