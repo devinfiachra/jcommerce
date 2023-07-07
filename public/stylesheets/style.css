@@ -83,6 +83,7 @@ footer span {
 
 .product-detail {
   margin: 110px;
+
 }
 
 .detail-image {
@@ -95,6 +96,7 @@ footer span {
 
 .rating {
   color: var(--tertiary-color);
+  margin-bottom: 20px;
 }
 
 #cart-icon {
@@ -225,4 +227,73 @@ a:hover {
   align-items: center;
   justify-content: center;
   z-index: 150;
+}
+
+/* LOGIN REGISTRATION */
+.auth-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.page-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.receipt-container {
+  min-height: 100vh;
+  width: 99%;
+  overflow: hidden;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.receipt {
+  border: 5px solid red;
+}
+
+.purchase {
+  border: 2px solid var(--secondary-color);
+  display: flex;
+  align-items: flex-start;
+  width: 20%;
+  padding: 1%;
+  overflow: hidden;
+  padding: 1%;
+  margin: 2%;
+}
+
+.button-flex {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-form {
+  display: flex;
+  flex-direction: column;
+.product-only {
+  margin: 50px auto;
+}
+
+#proceed {
+  color: var(--text-color);
+}
+
+#proceed:hover {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.bottom {
+  margin-bottom: 50px;
 }
