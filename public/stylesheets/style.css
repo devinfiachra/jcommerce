@@ -83,6 +83,7 @@ footer span {
 
 .product-detail {
   margin: 110px;
+
 }
 
 .detail-image {
@@ -95,6 +96,7 @@ footer span {
 
 .rating {
   color: var(--tertiary-color);
+  margin-bottom: 20px;
 }
 
 #cart-icon {
@@ -283,4 +285,19 @@ a:hover {
 .flex-form {
   display: flex;
   flex-direction: column;
+.product-only {
+  margin: 50px auto;
+}
+
+#proceed {
+  color: var(--text-color);
+}
+
+#proceed:hover {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.bottom {
+  margin-bottom: 50px;
 }
