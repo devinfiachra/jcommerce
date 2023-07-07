@@ -1,31 +1,31 @@
-
-<div class="checkout-container">
-
-  <div><h1>Checkout</h1></div>
-
-  <div>
-    
-    <h3>Please enter your shipping details</h3>
-    <form action="/success" method="POST" class="flex-form">
-      <label for="name">Name: </label>
-      <input type="text" name="name" id="name" />
-      <label for="street">Street: </label>
-      <input type="text" name="street" id="street" />
-      <label for="city">City: </label>
-      <input type="text" name="city" id="city" />
-      <label for="country">Country: </label>
-      <input type="text" name="country" id="country" />
-      <br />
-      <div class="button-flex">
-        <a href="/success"><button type="submit">PLACE YOUR ORDER</button></a>
-      </div>
-      
-    </form>
-
-  </div>
+<div class="container-fluid">
+<h1>Checkout</h1>
+<div>
+  <h3>Please choose your payment method:</h3>
+  <form action="">
+    <input type="radio" name="payment" id="paypal" value="paypal">
+    <label for="paypal">Paypal</label>
+    <input type="radio" name="payment" id="creditcard" value="creditcard">
+    <label for="creditcard">Credit card</label>
+  </form>
+  <h3>Please enter your shipping address:</h3>
+  <form action="/success" method="POST">
+    <label for="name">Name: </label>
+    <input type="text" name="name" id="name">
+    <label for="street">Street: </label>
+    <input type="text" name="street" id="street">
+    <label for="city">City: </label>
+    <input type="text" name="city" id="city">
+    <label for="country">Country: </label>
+    <input type="text" name="country" id="country">
+    <br>
+    <a href="/success"><button type="submit">Submit</button></a>
+  </form>
 
 
 
-  </div>
+
+</div>
+
 
 </div>
