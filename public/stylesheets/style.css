@@ -244,6 +244,14 @@ a:hover {
   justify-content: center;
 }
 
+.checkout-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .receipt-container {
   min-height: 100vh;
   width: 99%;
@@ -252,10 +260,6 @@ a:hover {
   flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-}
-
-.receipt {
-  border: 5px solid red;
 }
 
 .purchase {
@@ -267,4 +271,16 @@ a:hover {
   overflow: hidden;
   padding: 1%;
   margin: 2%;
+}
+
+.button-flex {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+}
+
+.flex-form {
+  display: flex;
+  flex-direction: column;
 }
