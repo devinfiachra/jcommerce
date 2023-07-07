@@ -24,36 +24,37 @@
   </div>
 </section> --}}
 
+<div class="page-container">
 
-<h1>CART</h1>
+  <h1>CART</h1>
 
-<section class="cart">
-  <div>
+  <section class="cart">
+    <div>
 
-    
-    <div class="product-details">
-      {{#each cartItems}}
-        <div class="p-details">
-          <div class="image-container">
-            <img class="detail-img" src="{{this.product.image}}" alt="" />
+      <div class="product-details">
+        {{#each cartItems}}
+          <div class="p-details">
+            <div class="image-container">
+              <img class="detail-img" src="{{this.product.image}}" alt="" />
+            </div>
+            <div class="content-container">
+              <p>Title: {{this.product.title}}</p>
+              <p>Price: ${{this.product.price}}</p>
+              <p class="quantity">Quantity: {{this.quantity}}</p>
+
+              <form action="/carts/{{product.id}}" method="POST">
+                <input type="hidden" name="id" value="{{this.product.id}}" />
+                <button type="submit" class="add-btn">+</button>
+                <button type="submit" class="add-btn" id="minus">-</button>
+              </form>
+            </div>
           </div>
-          <div class="content-container">
-            <p>Title: {{this.product.title}}</p>
-            <p>Price: ${{this.product.price}}</p>
-            <p class="quantity">Quantity: {{this.quantity}}</p>
-
-            <form action="/carts/{{product.id}}" method="POST">
-              <input type="hidden" name="id" value="{{this.product.id}}" />
-              <button type="submit" class="add-btn">+</button>
-              <button type="submit" class="add-btn" id="minus">-</button>
-            </form>
-          </div>
-        </div>
-      {{/each}}
+        {{/each}}
+      </div>
+      <div><p>Total: {{cartTotal}}</p></div>
+      <button>
+        <a href="/checkout">Proceed to checkout</a>
+      </button>
     </div>
-    <div><p>Total: {{cartTotal}}</p></div>
-    <button>
-      <a href="/checkout">Proceed to checkout</a>
-    </button>
-  </div>
-</section>
+  </section>
+</div>
