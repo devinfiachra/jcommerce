@@ -96,6 +96,7 @@ footer span {
 
 .rating {
   color: var(--tertiary-color);
+  margin-bottom: 20px;
 }
 
 #cart-icon {
@@ -228,19 +229,19 @@ a:hover {
   z-index: 150;
 }
 
-.p-details {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+.product-only {
+  margin: 50px auto;
 }
 
 #proceed {
-  text-decoration: none;
   color: var(--text-color);
 }
 
 #proceed:hover {
-  text-decoration: none;
   color: var(--text-color);
+  text-decoration: none;
+}
+
+.bottom {
+  margin-bottom: 50px;
 }
