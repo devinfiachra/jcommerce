@@ -95,6 +95,7 @@ footer span {
 
 .rating {
   color: var(--tertiary-color);
+  margin-bottom: 20px;
 }
 
 #cart-icon {
@@ -225,4 +226,21 @@ a:hover {
   align-items: center;
   justify-content: center;
   z-index: 150;
+}
+
+.product-only {
+  margin: 50px auto;
+}
+
+#proceed {
+  color: var(--text-color);
+}
+
+#proceed:hover {
+  color: var(--text-color);
+  text-decoration: none;
+}
+
+.bottom {
+  margin-bottom: 50px;
 }

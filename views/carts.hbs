@@ -25,24 +25,24 @@
 </section> --}}
 
 
-<h1>CART</h1>
+<h1 class="bottom">CART</h1>
 
 <section class="cart">
   <div>
 
-    
+
     <div class="product-details">
       {{#each cartItems}}
         <div class="p-details">
-          <div class="image-container">
-            <img class="detail-img" src="{{this.product.image}}" alt="" />
+          <div class="image-container bottom">
+            <img class="detail-img" src="{{this.product.image}}" alt="product image"/>
           </div>
           <div class="content-container">
             <p>Title: {{this.product.title}}</p>
             <p>Price: ${{this.product.price}}</p>
             <p class="quantity">Quantity: {{this.quantity}}</p>
 
-            <form action="/carts/{{product.id}}" method="POST">
+            <form action="/carts/{{product.id}}" method="POST" class="bottom">
               <input type="hidden" name="id" value="{{this.product.id}}" />
               <button type="submit" class="add-btn">+</button>
               <button type="submit" class="add-btn" id="minus">-</button>
@@ -51,9 +51,9 @@
         </div>
       {{/each}}
     </div>
-    <div><p>Total: {{cartTotal}}</p></div>
-    <button>
-      <a href="/checkout">Proceed to checkout</a>
+    <div class="bottom"><p>Total: ${{cartTotal}}</p></div>
+    <button class="bottom">
+      <a href="/checkout" id="proceed">Proceed to checkout</a>
     </button>
   </div>
 </section>
