@@ -226,3 +226,12 @@ a:hover {
   justify-content: center;
   z-index: 150;
 }
+
+/* LOGIN REGISTRATION */
+.auth-page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
